@@ -9,6 +9,7 @@ function App() {
     <main>
       <Switch>
         <Route path="/" component={SignUpForm} exact />
+        <Route path="/home" component={Home} />
       </Switch>
     </main>
   );

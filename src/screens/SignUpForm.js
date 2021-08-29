@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 //import { makeStyles } from "@material-ui/core";
+import "../App.css";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
@@ -94,6 +95,19 @@ const SignUpForm = () => {
   const [password, setPassword] = useState("");
   const [location, setLocation] = useState("");
   const [currentLayout, setCurrentLayout] = React.useState("k-card-list");
+  const [agree, setAgree] = useState(false);
+
+  const checkboxHandler = () => {
+    // if agree === true, it will be set to false
+    // if agree === false, it will be set to true
+    setAgree(!agree);
+    // Don't miss the exclamation mark
+  };
+
+  // When the button is clicked
+  const btnHandler = () => {
+    //alert("The buttion is clickable!");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -228,20 +242,33 @@ const SignUpForm = () => {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
+          <div>
+            <input type="checkbox" id="agree" onChange={checkboxHandler} />
+            <label htmlFor="agree">
+              {" "}
+              I agree to <a href="">Terms of Service</a> and{" "}
+              <a href="">Privacy Policy</a>
+            </label>
+          </div>
 
-          <span style={{ alignContent: "center" }}>
-            <ThemeProvider theme={theme}>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.margin}
-                alignContent="center"
-              >
-                SignUpNow
-              </Button>
-            </ThemeProvider>
-          </span>
+          <button disabled={!agree} className="btn" onClick={btnHandler}>
+            SignUpNow
+          </button>
+
+          {/* <ThemeProvider theme={theme}>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.margin}
+              alignContent="center"
+            >
+              SignUpNow
+            </Button>
+          </ThemeProvider> */}
         </div>
+        <label htmlFor="agree">
+          Already have an account? <a href="/home">Sign in</a>
+        </label>
       </form>
     </div>
   );
