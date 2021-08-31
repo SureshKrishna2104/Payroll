@@ -2,16 +2,8 @@ import React, { useState } from "react";
 //import { makeStyles } from "@material-ui/core";
 import "../App.css";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import Box from "@material-ui/core/Box";
-import { borders } from "@material-ui/system";
 import { FontAwesome } from "react-fontawesome";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import FormControl from "@material-ui/core/FormControl";
 import DomainIcon from "@material-ui/icons/Domain";
 import CallIcon from "@material-ui/icons/Call";
 import EmailIcon from "@material-ui/icons/Email";
@@ -25,12 +17,6 @@ import {
 } from "@material-ui/core/styles";
 import { green, purple, orange } from "@material-ui/core/colors";
 //import TextField from "@material-ui/core/TextField";
-import {
-  Card,
-  CardTitle,
-  CardBody,
-  CardActions,
-} from "@progress/kendo-react-layout";
 
 //import { IconName } from "react-icons/fa";
 //import capture from "../../public/logo192.png";
@@ -60,8 +46,8 @@ const useStyles = makeStyles((theme) => ({
     width: "350px",
     padding: "30px",
     border: "2px solid gray",
-    height: "400px",
-    marginTop: "0px",
+    height: "550px",
+    marginTop: "-80px",
     alignContent: "center",
     justifyContent: "center",
     //margin: "40",
@@ -118,14 +104,14 @@ const SignUpForm = () => {
     <div className={classes.root1}>
       <div className={classes.root1}>
         <p>
-          <h1 style={{ fontSize: 25 }}>
+          <h1 style={{ fontSize: 28, fontWeight: 600 }}>
             {"  "}
             <img
               src={process.env.PUBLIC_URL + "/images/Capture.png"}
               width="30"
               height="30"
             />
-            CodingMart Payroll
+            &nbsp;&nbsp; Codingmart Payroll
           </h1>
 
           <p>
@@ -135,127 +121,166 @@ const SignUpForm = () => {
             <br></br>
             <br></br>
             we built CodingMart Payroll so you can:<br></br>
-            <br></br>* <b>Streamline</b> your payroll process end-to-end
             <br></br>
-            <br></br>* <b>Define</b> clear roles for your payroll staff<br></br>
-            <br></br>* <b>Create</b> salary components,allowances and more,the
-            way you want<br></br>
-            <br></br>* <b>Compute</b> your employees paycheck accurately every
-            time<br></br>
-            <br></br>* <b>Distribute</b> salaries and payslips online<br></br>
-            <br></br>* <b>Automatic</b> payroll accounting with codingmart Books
+            <li>
+              <b>Streamline</b> your payroll process end-to-end
+            </li>
             <br></br>
-            <br></br>* <b>Reduce</b> payroll staff workload with collaborative
-            self-service portal.<br></br>
+            <li>
+              <b>Define</b> clear roles for your payroll staff
+            </li>
+            <br></br>
+            <li>
+              <b>Create</b> salary components,allowances and more,the way you
+              want
+            </li>
+            <br></br>
+            <li>
+              <b>Compute</b> your employees paycheck accurately every time
+            </li>
+            <br></br>
+            <li>
+              {" "}
+              <b>Distribute</b> salaries and payslips online
+            </li>
+            <br></br>
+            <li>
+              <b>Automatic</b> payroll accounting with codingmart Books
+            </li>
+            <br></br>
+            <li>
+              <b>Reduce</b> payroll staff workload with collaborative
+              self-service portal.
+            </li>
+            <br></br>
           </p>
         </p>
       </div>
-
-      <form className={classes.root} onSubmit={handleSubmit}>
-        <div className={classes.rectangle}>
-          <p>
-            <span
-              style={{
-                fontSize: 30,
-              }}
-            >
-              {"  "} Let's get started{" "}
-            </span>
-            <br></br>Explore all features with 30 day free-trail
-          </p>
-
-          <TextField
-            className={classes.margin}
-            id="input-with-icon-textfield"
-            placeholder="Company Name"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <DomainIcon />
-                </InputAdornment>
-              ),
-            }}
-            required
-            value={companyName}
-            onChange={(e) => setCompanyName(e.target.value)}
-          />
-
-          <TextField
-            className={classes.margin}
-            id="input-with-icon-textfield"
-            placeholder="Email"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <EmailIcon />
-                </InputAdornment>
-              ),
-            }}
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <TextField
-            className={classes.margin}
-            id="input-with-icon-textfield"
-            placeholder="Contact Number"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <CallIcon />
-                </InputAdornment>
-              ),
-            }}
-            //type="email"
-            required
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <TextField
-            className={classes.margin}
-            id="input-with-icon-textfield"
-            placeholder="Password"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <HttpsIcon />
-                </InputAdornment>
-              ),
-            }}
-            type="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <TextField
-            className={classes.margin}
-            id="input-with-icon-textfield"
-            placeholder="India"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <LanguageIcon />
-                </InputAdornment>
-              ),
-            }}
-            required
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-          <div>
-            <input type="checkbox" id="agree" onChange={checkboxHandler} />
-            <label htmlFor="agree">
-              {" "}
-              I agree to <a href="">Terms of Service</a> and{" "}
-              <a href="">Privacy Policy</a>
-            </label>
-          </div>
-
-          <button disabled={!agree} className="btn" onClick={btnHandler}>
-            SignUpNow
-          </button>
-
-          {/* <ThemeProvider theme={theme}>
+      <div class="zp-signup-form-container" style={{ marginTop: "-100px" }}>
+        <form className={classes.root} onSubmit={handleSubmit}>
+          <div class="zp-signup-form">
+            <div style={{ marginBottom: "30px" }}>
+              <h2>
+                <span
+                  style={{
+                    fontSize: 30,
+                    fontWeight: 600,
+                  }}
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp; Let's get started
+                </span>
+              </h2>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Explore all
+              features with 30 day free-trail
+            </div>
+            <div style={{ marginBottom: "20px" }}>
+              <TextField
+                className={classes.margin}
+                id="input-with-icon-textfield"
+                placeholder="Company Name"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <DomainIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                required
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
+              />
+            </div>
+            <div style={{ marginBottom: "20px" }}>
+              <TextField
+                className={classes.margin}
+                id="input-with-icon-textfield"
+                placeholder="Email"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <EmailIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div style={{ marginBottom: "30px" }}>
+              <TextField
+                className={classes.margin}
+                id="input-with-icon-textfield"
+                placeholder="Contact Number"
+                type="number"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <CallIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                //type="email"
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </div>
+            <div style={{ marginBottom: "30px" }}>
+              <TextField
+                className={classes.margin}
+                id="input-with-icon-textfield"
+                hintText="Password"
+                floatingLabelText="Password"
+                placeholder="Password"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <HttpsIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                type="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div style={{ marginBottom: "30px" }}>
+              <TextField
+                className={classes.margin}
+                id="input-with-icon-textfield"
+                placeholder="India"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <LanguageIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                required
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              />
+            </div>
+            <div>
+              <input type="checkbox" id="agree" onChange={checkboxHandler} />
+              <label htmlFor="agree">
+                {" "}
+                I agree to <a href="">Terms of Service</a> and{" "}
+                <a href="">Privacy Policy</a>
+              </label>
+            </div>
+            <div class="form-group">
+              <button
+                disabled={!agree}
+                class="zp-form-submit"
+                onClick={btnHandler}
+              >
+                SignUpNow
+              </button>
+            </div>
+            {/* <ThemeProvider theme={theme}>
             <Button
               variant="contained"
               color="primary"
@@ -265,11 +290,12 @@ const SignUpForm = () => {
               SignUpNow
             </Button>
           </ThemeProvider> */}
-        </div>
-        <label htmlFor="agree">
-          Already have an account? <a href="/home">Sign in</a>
-        </label>
-      </form>
+          </div>
+          <label htmlFor="agree">
+            Already have an account? <a href="/home">Sign in</a>
+          </label>
+        </form>
+      </div>
     </div>
   );
 };
